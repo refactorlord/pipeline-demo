@@ -20,8 +20,6 @@ Simple project to demonstrate Docker and Prometheus skills. FastAPI deployed wit
 
 ## Setup
 
-## Setup
-
 1. Clone the repository
 ```bash
    git clone git@github.com:refactorlord/pipeline-demo.git
@@ -46,4 +44,4 @@ Simple project to demonstrate Docker and Prometheus skills. FastAPI deployed wit
 
 ## Architecture
 
-Client -> FastAPI app on port 8000 -> postgreSQL on 5432
+Client -> FastAPI app on port 8000 -> PostgreSQL on 5432
