@@ -1,5 +1,5 @@
 # pipeline-demo
-
+![CI](https://github.com/refactorlord/pipeline-demo/actions/workflows/ci.yml/badge.svg)
 ## Health-check simple API
 Simple project to demonstrate Docker and Prometheus skills. FastAPI deployed with uvicorn.
 
