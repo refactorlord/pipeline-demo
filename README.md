@@ -45,12 +45,4 @@ Simple project to demonstrate Docker and Prometheus skills. FastAPI deployed wit
 
 ## Architecture
 
-GitHub → CI (hadolint + trivy) → Docker Image
-                                        ↓
-                                  kind cluster
-                                        ↓
-                              Ingress (app.local)
-                                        ↓
-                                Service (ClusterIP)
-                                        ↓
-                          Deployment (2 replicas) → PostgreSQL
+GitHub -> CI (hadolint + trivy) -> Docker Image -> kind cluster ->  Ingress (app.local) -> Service (ClusterIP) -> Deployment (2 replicas) → PostgreSQL
