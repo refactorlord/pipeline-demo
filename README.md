@@ -42,7 +42,17 @@ Simple project to demonstrate Docker and Prometheus skills. FastAPI deployed wit
    curl http://localhost:8000/metrics
 ```
 
-
 ## Architecture
 
-GitHub -> CI (hadolint + trivy) -> Docker Image -> kind cluster ->  Ingress (app.local) -> Service (ClusterIP) -> Deployment (2 replicas) → PostgreSQL
+```mermaid
+graph LR
+    A[GitHub] --> B[CI: hadolint + trivy]
+    B --> C[Docker Image]
+    C --> D[kind cluster]
+    D --> E[Ingress: app.local]
+    E --> F[Service: ClusterIP]
+    F --> G[Pod 1]
+    F --> H[Pod 2]
+    G --> I[PostgreSQL]
+    H --> I[PostgreSQL]
+```
