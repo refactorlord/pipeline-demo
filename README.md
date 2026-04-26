@@ -42,6 +42,15 @@ Simple project to demonstrate Docker and Prometheus skills. FastAPI deployed wit
    curl http://localhost:8000/metrics
 ```
 
+
 ## Architecture
 
-Client -> FastAPI app on port 8000 -> PostgreSQL on 5432
+GitHub → CI (hadolint + trivy) → Docker Image
+                                        ↓
+                                  kind cluster
+                                        ↓
+                              Ingress (app.local)
+                                        ↓
+                                Service (ClusterIP)
+                                        ↓
+                          Deployment (2 replicas) → PostgreSQL
