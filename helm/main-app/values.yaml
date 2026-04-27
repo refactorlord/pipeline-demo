@@ -1,0 +1,35 @@
+app:
+  image:
+    repository: pipeline-demo-app
+    tag: "latest"
+    pullPolicy: IfNotPresent
+  replicas: 1
+  env: production
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+
+postgres:
+  version: "15"
+  database: appdb
+  user: appuser
+  password: changeme
+  databaseUrl: "postgresql://appuser:changeme@main-app-postgres:5432/appdb"
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+
+ingress:
+  enabled: true
+  className: nginx
+  host: app.local
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /

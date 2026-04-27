@@ -1,0 +1,20 @@
+app:
+  image:
+    repository: pipeline-demo-app
+    tag: "latest"
+  replicas: 1
+  env: development
+  resources:
+    requests:
+      cpu: "50m"
+      memory: "64Mi"
+    limits:
+      cpu: "200m"
+      memory: "256Mi"
+
+postgres:
+  password: devpassword123
+  databaseUrl: "postgresql://appuser:devpassword123@main-app-postgres:5432/appdb"
+
+ingress:
+  host: app.local
